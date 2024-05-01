@@ -141,3 +141,13 @@ application.
   * Compute: Pay for compute time
   * Storage: Pay for data stored in the Cloud
   * Data Transfer OUT of the Cloud: Data transfer IN is free
+
+```mermaid
+timeline
+title AWS Cloud History
+2002 : Launched as amazon.com
+2003 : Idea to offer IT to the market
+2004 : SQS - 1st available to the public
+2006 : SQS - EC2 and S3
+2007 : Launched in Europe
+```
