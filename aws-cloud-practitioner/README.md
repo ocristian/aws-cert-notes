@@ -6,6 +6,7 @@
     * [Characteristics of Cloud Computing](#characteristics-of-cloud-computing)
     * [Advantages of Cloud Computing](#advantages-of-cloud-computing)
     * [Problems solved by the Cloud](#advantages-of-cloud-computing)
+    * [Different Types of Cloud Computing](#different-types-of-cloud-computing)
 <!-- /TOC -->
 
 <a name="cloud-computing"></a>
@@ -79,3 +80,64 @@ application.
 * `High-availability` and `fault-tolerance`: build across data centers
 * `Agility`: rapidly develop, test and launch software applications
 
+<a name="different-types-of-cloud-computing"></a>
+### Different Types of Cloud Computing
+
+#### IaaS - Infrastructure as a Service
+* Provides networking, computers, data storage space
+* Highest level of flexibility
+* Easy parallel with traditional on-premises IT
+
+#### PaaS - Platform as a Service
+* Removes the need for your organization to manage the underlying infrastructure
+* Focus on the deployment and management of your application
+
+#### SaaS - Software as a Service
+* Completed product that is run and managed byt the service provider
+
+#### Management on each Cloud Type
+* Managed by you
+
+| On-premises    | IaaS - Infrastructure<br/>as a Service | PaaS - Platform<br/>as a Service | SaaS - Software<br/>as a Service |
+|----------------|----------------------------------------|----------------------------------|----------------------------------|
+| Applications   | Applications                           | Applications                     |                                  |
+| Data           | Data                                   | Data                             |                                  |
+| Runtime        | Runtime                                |                                  |                                  |
+| Middleware     | Middleware                             |                                  |                                  |
+| OS             | OS                                     |                                  |                                  |
+| Virtualization |                                        |                                  |                                  |
+| Servers        |                                        |                                  |                                  |
+| Storage        |                                        |                                  |                                  |
+| Networking     |                                        |                                  |                                  |
+
+* Managed by others
+
+| On-premises | IaaS - Infrastructure<br/>as a Service | PaaS - Platform<br/>as a Service | SaaS - Software<br/>as a Service |
+|-------------|----------------------------------------|----------------------------------|----------------------------------|
+|             | Virtualization                         | Runtime                          | Application                      |
+|             | Servers                                | Middleware                       | Data                             |
+|             | Storage                                | OS                               | Runtime                          |
+|             | Networking                             | Virtualization                   | Middleware                       |
+|             |                                        | Servers                          | OS                               |
+|             |                                        | Storage                          | Virtualization                   |
+|             |                                        | Networking                       | Servers                          |
+|             |                                        |                                  | Storage                          |
+|             |                                        |                                  | Networking                       |
+
+#### Examples of Cloud Computing Types
+* IaaS - Infrastructure as a Service
+  * Amazon EC2 on AWS
+  * GCP, Azure
+
+* PaaS - Platform as a Service
+  * Elastic Beanstalk on AWS
+  * Heroku, Google App Engine on GCP, Windows Azure on Microsof
+* SaaS - Software as a Service
+  * AWS Services as Rekognition for Machine Learning
+  * Google Apps as Gmail and Photos, Zoom, Dropbox  
+
+#### Pricing
+* AWS has 3 pricing fundamentals, following the pay-as-you-go pricing model
+  * Compute: Pay for compute time
+  * Storage: Pay for data stored in the Cloud
+  * Data Transfer OUT of the Cloud: Data transfer IN is free
