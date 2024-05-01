@@ -7,6 +7,7 @@
     * [Advantages of Cloud Computing](#advantages-of-cloud-computing)
     * [Problems solved by the Cloud](#advantages-of-cloud-computing)
     * [Different Types of Cloud Computing](#different-types-of-cloud-computing)
+    * [AWS Cloud History](#aws-cloud-history)
 <!-- /TOC -->
 
 <a name="cloud-computing"></a>
@@ -142,12 +143,14 @@ application.
   * Storage: Pay for data stored in the Cloud
   * Data Transfer OUT of the Cloud: Data transfer IN is free
 
+<a name="aws-cloud-history"></a>
+### AWS Cloud History
+
 ```mermaid
 timeline
-title AWS Cloud History
 2002 : Launched as amazon.com
 2003 : Idea to offer IT to the market
 2004 : SQS - 1st available to the public
-2006 : SQS - EC2 and S3
+2006 : SQS, EC2 and S3
 2007 : Launched in Europe
 ```
