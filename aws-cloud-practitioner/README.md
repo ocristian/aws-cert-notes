@@ -8,6 +8,8 @@
     * [Problems solved by the Cloud](#advantages-of-cloud-computing)
     * [Different Types of Cloud Computing](#different-types-of-cloud-computing)
     * [AWS Cloud History](#aws-cloud-history)
+    * [AWS Global Infrastructure](#aws-global-infrastructure)
+    * [Shared Responsibility Model and AWS Acceptable Policy](#shared-responsibility-model-and-aws-acceptable-policy)
 <!-- /TOC -->
 
 <a name="cloud-computing"></a>
@@ -154,3 +156,44 @@ timeline
 2006 : SQS, EC2 and S3
 2007 : Launched in Europe
 ```
+
+<a name="aws-global-infrastructure"></a>
+### AWS Global Infrastructure
+#### AWS Regions
+* Each regions is connected thru private AWS network
+* Are all around the world
+* Names can be `us-east-1`, `eu-west-3`
+* A region is a `cluster of data centers`
+* Most AWS services are region-scoped
+
+##### How to choose an AWS Regions?
+* `Compliance` with data governance and legal requirements: data never leaves a region without explicit permission
+* `Proximity` to customers: reduced latency
+* `Available services` within a region: new services and features aren't available in every region
+* `Pricing` varies region to region 
+
+#### AWS Availability Zones
+* Each region has many availability zone, usually 3, min is 3 and max is 6
+  * Example: `eu-west-1a`, `eu-west-1b` and `eu-west-1c`
+* Each `AZ` - availability zone is one or more discrete data centers with redundant power, networking and connectivity
+* `AZs` are separate from each other, isolated from disaster
+* `AZs` are connected with high bandwidth, ultra-low latency networking
+
+#### AWS Global Services
+* `IAM` - Identity and Access Management
+* `Route 53` - DNS service
+* `CloudFront` - Content Delivery Network
+* `WAF` - Web Application Firewall
+
+##### Most AWS Services Region-scoped
+* `Amazon EC2` - Infrastructure as a Service
+* `Elastic Beanstalk` - Platform as a Service
+* `Lambda` - Function as a Service
+* `Rekognition` - Software as a Service
+
+<a name="shared-responsibility-model-and-aws-acceptable-policy"></a>
+### Shared Responsibility Model and AWS Acceptable Policy
+* `Customer` responsibility for the security `IN` the cloud
+* `AWS` responsibility for the security `OF` the cloud
+
+<img alt="AWS Shared Responsibility Model" src="https://d1.awsstatic.com/security-center/Shared_Responsibility_Model_V2.59d1eccec334b366627e9295b304202faf7b899b.jpg">
