@@ -3,12 +3,33 @@
 `IAM` is a `AWS Global Service` where users, groups, roles and policies are created.
 
 <!-- TOC depthFrom:2 -->
+- [AWS IAM Users, Groups and Permissions](#aws-iam-users-groups-and-permissions)
 - [Root account](#root-account)
 - [Users](#users)
 - [Groups](#groups)
 - [Permissions](#permissions)
-- [AWS IAM Users, Groups and Permissions](#aws-iam-users-groups-and-permissions)
+- [Roles for Services](#roles-for-services)
 <!-- /TOC -->
+
+<a name="iam-users-groups-permissions"></a>
+## AWS IAM Users, Groups and Permissions
+
+```mermaid
+graph TD;
+    A[AWS Account] --> B[IAM User];
+    B --> C[IAM Group 1];
+    B --> D[IAM Group 2];
+    C --> E[Permissions];
+    D --> F[Permissions];
+```
+- **AWS Account**: Represents the overall AWS account.
+- **IAM User**: An individual IAM user with unique credentials.
+- **IAM Groups**: Containers that organize IAM users based on common roles or permissions.
+    - **IAM Group 1**: Contains specific users and associated permissions.
+        - **Permissions**: Permissions assigned to users in IAM Group 1.
+    - **IAM Group 2**: Another group with its own set of users and permissions.
+        - **Permissions**: Permissions assigned to users in IAM Group 2.
+
 
 <a name="root-account"></a>
 ## Root account
@@ -87,22 +108,20 @@ This granularity supports the principle of least privilege, where entities are g
 Permissions are evaluated based on the combination of policies attached to the IAM entity (user, group, role).  
 IAM policies can be managed directly (inline policies) or attached from managed policies (AWS-managed or customer-managed policies).
 
-<a name="iam-users-groups-permissions"></a>
-## AWS IAM Users, Groups and Permissions
+<a name="roles-for-services"></a>
+## Roles for Services
+AWS IAM roles for services `enable AWS services to perform actions on your behalf`.  
+Instead of embedding credentials directly into the service configurations, you assign roles to services, granting them the necessary permissions to interact with other AWS 
+resources securely and efficiently.
 
-```mermaid
-graph TD;
-    A[AWS Account] --> B[IAM User];
-    B --> C[IAM Group 1];
-    B --> D[IAM Group 2];
-    C --> E[Permissions];
-    D --> F[Permissions];
-```
-Explanation:
-- **AWS Account**: Represents the overall AWS account.
-- **IAM User**: An individual IAM user with unique credentials.
-- **IAM Groups**: Containers that organize IAM users based on common roles or permissions.
-    - **IAM Group 1**: Contains specific users and associated permissions.
-        - **Permissions**: Permissions assigned to users in IAM Group 1.
-    - **IAM Group 2**: Another group with its own set of users and permissions.
-        - **Permissions**: Permissions assigned to users in IAM Group 2.
+#### Common Use Cases for AWS IAM Roles for Services
+##### EC2 Instances
+Assigning a role to an EC2 instance allows it to interact with other AWS services (e.g., reading from S3, writing logs to CloudWatch) without embedding credentials in the instance.
+
+##### Lambda Functions
+Roles can be assigned to AWS Lambda functions to grant them permissions needed to access other AWS resources, such as databases, S3 buckets, or invoking other AWS services.
+
+#### How to Define an IAM Role for a Service
+1. Create the Role
+2. Attach Policies
+3. Assign the Role to a Service
