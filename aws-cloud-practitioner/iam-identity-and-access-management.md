@@ -9,6 +9,9 @@
 - [Groups](#groups)
 - [Permissions](#permissions)
 - [Roles for Services](#roles-for-services)
+- [Security Tools](#iam-security-tools)
+- [Share Responsibility Model for IAM](#share-responsibility-model-for-iam)
+- [Best Practices](#iam-best-practices)
 <!-- /TOC -->
 
 <a name="iam-users-groups-permissions"></a>
@@ -125,3 +128,42 @@ Roles can be assigned to AWS Lambda functions to grant them permissions needed t
 1. Create the Role
 2. Attach Policies
 3. Assign the Role to a Service
+
+<a name="iam-security-tools"></a>
+## IAM Security Tools
+
+### IAM Credentials Report - account-level
+Reports that provide details about the status of IAM users’ credentials.  
+Generate reports to monitor user access keys, passwords, and MFA device status, helping ensure compliance with security policies.
+
+### IAM Access Advisor - user-level
+Shows the last access time for services by IAM users and roles, and the last time those services were used. 
+
+<a name="share-responsibility-model-for-iam"></a>
+## Share Responsibility Model for IAM
+
+### AWS
+* Infrastructure (Global Security Network)
+* Configuration and Vulnerability Analysis
+* Compliance Validation
+
+### You
+* Users, Groups, Roles, Policies, Management and Monitoring
+* Enable MFA on all accounts
+* Rotate all keys often
+* Use IAM tools to apply appropriate permissions
+* Analyse access patterns and review permissions  
+
+
+<a name="iam-best-practices"></a>
+## IAM Best Practices
+* Don't use root account except for AWS account setup.
+* One physical user = One AWS user.
+* Assign users to groups and assign permissions to groups.
+* Create strong password policy.
+* Always enable MFA for your root account and IAM users.
+* Prefer using IAM roles over IAM users for applications and services.
+* Follow the Least Privilege Principle, grant the minimum necessary permissions using IAM policies.
+* Use Access Keys for programmatic access like: CLI/SDK.
+* Regular Audits: Regularly review IAM policies, roles, and user permissions using IAM Access Advisor and Credential Reports.
+* Never share IAM users and access keys.
