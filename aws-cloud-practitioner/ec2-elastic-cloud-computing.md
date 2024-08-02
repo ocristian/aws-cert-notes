@@ -12,8 +12,7 @@
 - [SSH](#ssh)
 - [EC2 Instance Connect](#ec2-instance-connect)
 - [EC2 IAM Roles](#ec2-iam-roles)
-- [EC2 IAM Roles](#ec2-instance-purchasing-options)
-- [Instance Purchasing Options](#ec2-iam-roles)
+- [Instance Purchasing Options](#ec2-instance-purchasing-options)
 - [Shared Responsibility Model](#ec2-shared-responsibility-model)
 <!-- /TOC -->
 
