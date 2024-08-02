@@ -3,6 +3,7 @@
 `IAM` is a `AWS Global Service` where users, groups, roles and policies are created.
 
 <!-- TOC depthFrom:2 -->
+- [Best Practices](#iam-best-practices)
 - [AWS IAM Users, Groups and Permissions](#aws-iam-users-groups-and-permissions)
 - [Root account](#root-account)
 - [Users](#users)
@@ -11,12 +12,24 @@
 - [Roles for Services](#roles-for-services)
 - [Security Tools](#iam-security-tools)
 - [Share Responsibility Model for IAM](#share-responsibility-model-for-iam)
-- [Best Practices](#iam-best-practices)
+
 <!-- /TOC -->
+
+<a name="iam-best-practices"></a>
+## IAM Best Practices
+* Don't use root account except for AWS account setup.
+* One physical user = One AWS user.
+* Assign users to groups and assign permissions to groups.
+* Create strong password policy.
+* Always enable MFA for your root account and IAM users.
+* Prefer using IAM roles over IAM users for applications and services.
+* Follow the Least Privilege Principle, grant the minimum necessary permissions using IAM policies.
+* Use Access Keys for programmatic access like: CLI/SDK.
+* Regular Audits: Regularly review IAM policies, roles, and user permissions using IAM Access Advisor and Credential Reports.
+* Never share IAM users and access keys.
 
 <a name="iam-users-groups-permissions"></a>
 ## AWS IAM Users, Groups and Permissions
-
 ```mermaid
 graph TD;
     A[AWS Account] --> B[IAM User];
@@ -153,17 +166,3 @@ Shows the last access time for services by IAM users and roles, and the last tim
 * Rotate all keys often
 * Use IAM tools to apply appropriate permissions
 * Analyse access patterns and review permissions  
-
-
-<a name="iam-best-practices"></a>
-## IAM Best Practices
-* Don't use root account except for AWS account setup.
-* One physical user = One AWS user.
-* Assign users to groups and assign permissions to groups.
-* Create strong password policy.
-* Always enable MFA for your root account and IAM users.
-* Prefer using IAM roles over IAM users for applications and services.
-* Follow the Least Privilege Principle, grant the minimum necessary permissions using IAM policies.
-* Use Access Keys for programmatic access like: CLI/SDK.
-* Regular Audits: Regularly review IAM policies, roles, and user permissions using IAM Access Advisor and Credential Reports.
-* Never share IAM users and access keys.
