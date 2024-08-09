@@ -3,3 +3,4 @@
 ### [Cloud Computing](cloud-computing.md)
 ### [IAM - Identity and Access Management](iam-identity-and-access-management.md)
 ### [EC2 - Elastic Compute Cloud](ec2-elastic-cloud-computing.md)
+### [EC2 - Instance Storage](ec2-instance-storage.md)
