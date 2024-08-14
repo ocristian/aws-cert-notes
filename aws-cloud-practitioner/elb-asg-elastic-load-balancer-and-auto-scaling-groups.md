@@ -38,6 +38,24 @@
 - **Desired Capacity**: Keeps the specified number of instances running.
 - **ELB Integration**: Works with ELB to distribute traffic across instances.
 
+
+### Scaling Strategies
+
+* **Manual Scaling**: Manually adjust the size of the Auto Scaling Group (ASG) as needed.
+
+* **Dynamic Scaling**: Automatically adjusts to changing demand.
+  * **Simple / Step Scaling**:
+    * Triggered by CloudWatch alarms, e.g., add 2 units when CPU > 70%, remove 1 unit when CPU < 30%.
+  * **Target Tracking Scaling**:
+    * Maintains the average ASG CPU usage around a specific target, e.g., 40%.
+  * **Scheduled Scaling**:
+    * Anticipates scaling based on known usage patterns.
+    * Example: Increase the `min` capacity to X at 5 PM on Fridays.
+  * **Predictive Scaling**:
+    * Uses Machine Learning to predict future traffic.
+    * Automatically provisions the appropriate number of EC2 instances in advance.
+    * Useful for loads with predictable, time-based patterns.
+
 Together, `ELB` and `ASG` provide a scalable, highly available, and fault-tolerant infrastructure for your applications.
 
 
