@@ -3,7 +3,6 @@
 **Amazon Simple Storage Service (S3)** is a highly scalable, durable, and secure object storage service provided by AWS. It is designed to store and retrieve any amount of data from anywhere on the web.
 
 <!-- TOC depthFrom:2 -->
-- [Overview](#overview)
 - [Buckets](#s3---buckets)
 - [Objects](#s3---objects) 
 <!-- /TOC -->
