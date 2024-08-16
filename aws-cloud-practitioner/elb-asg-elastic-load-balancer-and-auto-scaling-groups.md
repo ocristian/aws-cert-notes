@@ -1,15 +1,40 @@
 # ELB & ASG - Elastic Load Balancing and Auto Scaling Groups 
 
 <!-- TOC depthFrom:2 -->
+- [Summary](#summary)
 - [ELB - Elastic Load Balancing](#elb---elastic-load-balancing)
 - [ASG - Auto Scaling Groups](#asg---auto-scaling-groups)
 - [Scalability and High Availability](#scalability-and-high-availability)
 
 <!-- /TOC -->
 
+## Summary
+
+* **High Availability vs Scalability vs Elasticity vs Agility in the Cloud**:
+  * **High Availability**: Ensures continuous operation with minimal downtime.
+  * **Scalability**: Ability to handle increased loads (`Vertical`: adding resources to a single instance, `Horizontal`: adding more instances).
+  * **Elasticity**: Automatic adjustment of resources based on real-time demand.
+  * **Agility**: Quickly provisioning new IT resources to reduce time for development.
+
+* **ELB - Elastic Load Balancers**:
+  * Distribute traffic across backend `EC2` instances, supporting `Multi-AZ` deployments.
+  * Support health checks to ensure traffic is routed only to healthy instances.
+  * Four types:
+    * **Classic Load Balancer (`CLB`)**: Legacy option, supports both L4 and L7.
+    * **Application Load Balancer (`ALB`)**: Operates at Layer 7 (HTTP/HTTPS).
+    * **Network Load Balancer (`NLB`)**: Operates at Layer 4 (TCP).
+    * **Gateway Load Balancer (`GLB`)**: Operates at Layer 3, integrates with virtual appliances.
+
+* **ASG - Auto Scaling Groups**:
+  * Implement elasticity for your application across multiple AZs.
+  * Scale `EC2` instances based on demand, automatically replacing unhealthy instances.
+  * Integrated with `ELB` for seamless traffic distribution and scaling.
+
+
+
 ## ELB - Elastic Load Balancing
 
-`ELB - Elastic Load Balancing` automatically distributes incoming traffic across multiple targets (EC2 instances, containers) to ensure high availability and reliability.
+**ELB - Elastic Load Balancing** automatically distributes incoming traffic across multiple targets (`EC2` instances, containers) to ensure high availability and reliability.
 
 ### Key Features:
 - **High Availability**: Spreads traffic across multiple Availability Zones.
@@ -30,24 +55,24 @@
 
 ## ASG - Auto Scaling Groups
 
-`ASG - Auto Scaling Groups` maintain the desired number of EC2 instances to match application demand, ensuring optimal performance and cost efficiency.
+**ASG - Auto Scaling Groups** maintain the desired number of `EC2` instances to match application demand, ensuring optimal performance and cost efficiency.
 
 ### Key Features:
 - **Automatic Scaling**: Adds or removes instances based on demand.
 - **Health Checks**: Monitors and replaces unhealthy instances.
 - **Desired Capacity**: Keeps the specified number of instances running.
-- **ELB Integration**: Works with ELB to distribute traffic across instances.
+- **ELB Integration**: Works with `ELB` to distribute traffic across instances.
 
 
 ### Scaling Strategies
 
-* **Manual Scaling**: Manually adjust the size of the Auto Scaling Group (ASG) as needed.
+* **Manual Scaling**: Manually adjust the size of the Auto Scaling Group (`ASG`) as needed.
 
 * **Dynamic Scaling**: Automatically adjusts to changing demand.
   * **Simple / Step Scaling**:
     * Triggered by CloudWatch alarms, e.g., add 2 units when CPU > 70%, remove 1 unit when CPU < 30%.
   * **Target Tracking Scaling**:
-    * Maintains the average ASG CPU usage around a specific target, e.g., 40%.
+    * Maintains the average `ASG` CPU usage around a specific target, e.g., 40%.
   * **Scheduled Scaling**:
     * Anticipates scaling based on known usage patterns.
     * Example: Increase the `min` capacity to X at 5 PM on Fridays.

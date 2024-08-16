@@ -7,3 +7,4 @@ This is a good starting point on the AWS Certification journey for individuals w
 ### [IAM - Identity and Access Management](iam-identity-and-access-management.md)
 ### [EC2 - Elastic Compute Cloud](ec2-elastic-cloud-computing.md)
 ### [EC2 - Instance Storage](ec2-instance-storage.md)
+### [ELB and ASG](elb-asg-elastic-load-balancer-and-auto-scaling-groups.md)
