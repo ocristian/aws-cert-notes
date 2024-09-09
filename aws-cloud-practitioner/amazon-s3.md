@@ -9,6 +9,10 @@
 - [S3 - Policies](#s3--policies)
 - [S3 - Static Website Hosting](#s3--static-website-hosting)
 - [S3 - Versioning](#s3--versioning)
+- [S3 - Replication](#s3--replication-crr--srr) 
+- [S3 - Storage Classes](#s3---storage-classes) 
+- [S3 - Durability and Availability](#s3---durability-and-availability) 
+- [S3 - Classes Comparison](#s3---classes-comparison) 
 <!-- /TOC -->
 
 #### Key Features:
@@ -23,6 +27,7 @@
   - **S3 Standard-IA (Infrequent Access)**: For data accessed less frequently, but requires rapid access when needed.
   - **S3 Glacier**: For long-term archival with retrieval times ranging from minutes to hours.
   - **S3 Glacier Deep Archive**: For data that is rarely accessed and can be retrieved within 12 hours.
+
 
 #### Use Cases:
 - **Backup and Restore**: Reliable storage for backup and disaster recovery solutions.
@@ -166,3 +171,149 @@ These policies ensure that `S3` access is both flexible and secure, adhering to 
 >> * Suspending versioning does not remove existing versions; all previous versions are retained.
 
 Versioning is especially useful for backup, recovery, and ensuring data integrity.
+
+
+## S3 – Replication (CRR & SRR)
+
+**Amazon S3 Replication** automatically and asynchronously copies objects between `S3 buckets` to enhance data durability, ensure compliance, and improve availability.
+
+- **Cross-Region Replication (CRR)**: Replicates objects across buckets in different `AWS regions`, ideal for disaster recovery and reducing latency for geographically dispersed users.
+- **Same-Region Replication (SRR)**: Replicates objects between buckets in the same region, typically used for compliance, backups, and data redundancy.
+
+### Requirements:
+- **Versioning**: Must be enabled on both the source and destination buckets.
+- **Permissions**: Proper `IAM permissions` must be granted to allow `S3` to perform replication.
+
+Both `CRR` and `SRR` replicate new objects and metadata changes, ensuring data consistency across buckets based on your specific replication rules.
+
+
+## S3 - Storage Classes
+
+**Amazon S3** offers multiple **storage classes** to optimize costs based on access patterns:
+
+- **S3 Standard**: General-purpose, high durability, and availability for frequently accessed data.
+- **S3 Intelligent-Tiering**: Automatically moves data between two access tiers (frequent and infrequent) to optimize cost.
+- **S3 Standard-IA (Infrequent Access)**: Lower cost for infrequently accessed data, with retrieval fees.
+- **S3 One Zone-IA**: Similar to Standard-IA but stored in a single AZ, with lower cost but reduced availability.
+- **S3 Glacier**: Low-cost, long-term archival storage for rarely accessed data, with retrieval times from minutes to hours.
+- **S3 Glacier Deep Archive**: Lowest-cost storage for long-term data archiving with retrieval times of 12-48 hours.
+
+
+## S3 - Durability and Availability
+
+- **Durability**: `Amazon S3` offers **99.999999999% (11 nines)** durability, meaning your data is highly protected against loss. This is achieved by automatically replicating objects across multiple facilities within an `AWS region`.
+
+- **Availability**: `S3` provides **99.99% availability**, ensuring your data is accessible almost all the time, even in the event of disruptions. Availability can vary slightly by storage class, with `S3 Standard` offering the highest level.
+
+
+## S3 - Classes Comparison
+
+<table cellspacing="0" cellpadding="1"> 
+  <tbody> 
+    <tr> 
+      <th width="20">&nbsp;</th> 
+      <th style="text-align: left;" width="20">S3 Standard</th> 
+      <th style="text-align: left;" width="20">S3 Intelligent-Tiering*<br> </th> 
+      <th width="20" style="text-align: left;">S3 Express One Zone**</th> 
+      <th style="text-align: left;" width="20">S3 Standard-IA<br> </th> 
+      <th style="text-align: left;" width="20">S3 One Zone-IA**<br> </th> 
+      <th style="text-align: left;" width="20">S3 Glacier<br> Instant Retrieval<br> </th> 
+      <th width="20" style="text-align: left;">S3 Glacier Flexible Retrieval***</th> 
+      <th style="text-align: left;" width="20">S3 Glacier<br> Deep Archive***<br> </th> 
+    </tr> 
+    <tr> 
+      <td>Use cases</td> 
+      <td>General&nbsp;purpose&nbsp;storage for&nbsp;frequently accessed data</td> 
+      <td>Automatic cost savings for data with unknown or changing access patterns</td> 
+      <td>High performance storage for your most frequently accessed data</td> 
+      <td>Infrequently accessed data that needs millisecond access</td> 
+      <td>Re-creatable infrequently accessed data</td> 
+      <td>Long-lived data that is accessed a few times per year with instant retrievals</td> 
+      <td>Backup and archive data that is rarely accessed and low cost</td> 
+      <td>Archive data that is very rarely accessed and very low cost</td> 
+    </tr> 
+    <tr> 
+      <td>First byte latency</td> 
+      <td>milliseconds</td> 
+      <td>milliseconds</td> 
+      <td>single-digit&nbsp;milliseconds</td> 
+      <td>milliseconds</td> 
+      <td>milliseconds</td> 
+      <td>milliseconds</td> 
+      <td>minutes or hours</td> 
+      <td>hours</td> 
+    </tr> 
+    <tr> 
+      <td>Durability<br> </td> 
+      <td style="text-align: left;" colspan="8">Amazon S3 provides the most durable storage in the cloud. Based on its unique architecture, S3 is designed to exceed <b>99.999999999% (11 nines)</b> data durability. Additionally, S3 stores data redundantly across a minimum of 3 Availability Zones by default, providing built-in resilience against widespread disaster. Customers can store data in a single AZ to minimize storage cost or latency, in multiple AZs for resilience against the permanent loss of an entire data center, or in multiple AWS Regions to meet geographic resilience requirements.</td> 
+    </tr> 
+    <tr> 
+      <td>Designed for availability<br> </td> 
+      <td style="text-align: center;">99.99%</td> 
+      <td style="text-align: center;">99.9%</td> 
+      <td style="text-align: center;">99.95%</td> 
+      <td style="text-align: center;">99.9%</td> 
+      <td style="text-align: center;">99.5%</td> 
+      <td style="text-align: center;">99.9%</td> 
+      <td style="text-align: center;">99.99%</td> 
+      <td style="text-align: center;">99.99%<br> </td> 
+    </tr> 
+    <tr> 
+      <td>Availability SLA</td> 
+      <td style="text-align: center;">99.9%</td> 
+      <td style="text-align: center;">99%</td> 
+      <td style="text-align: center;">99.9%</td> 
+      <td style="text-align: center;">99%</td> 
+      <td style="text-align: center;">99%</td> 
+      <td style="text-align: center;">99%<br> </td> 
+      <td style="text-align: center;">99.9%</td> 
+      <td style="text-align: center;">99.9%<br> </td> 
+    </tr> 
+    <tr> 
+      <td>Availability Zones</td> 
+      <td style="text-align: center;">≥3</td> 
+      <td style="text-align: center;">≥3</td> 
+      <td style="text-align: center;">1</td> 
+      <td style="text-align: center;">≥3</td> 
+      <td style="text-align: center;">1</td> 
+      <td style="text-align: center;">≥3</td> 
+      <td style="text-align: center;">≥3</td> 
+      <td style="text-align: center;">≥3</td> 
+    </tr> 
+    <tr> 
+      <td>Minimum storage duration charge</td> 
+      <td style="text-align: center;">N/A</td> 
+      <td style="text-align: center;">N/A</td> 
+      <td style="text-align: center;">1 hour</td> 
+      <td style="text-align: center;">30 days</td> 
+      <td style="text-align: center;">30 days</td> 
+      <td style="text-align: center;">90 days</td> 
+      <td style="text-align: center;">90 days</td> 
+      <td style="text-align: center;">180 days</td> 
+    </tr> 
+    <tr> 
+      <td>Retrieval charge</td> 
+      <td style="text-align: center;">N/A<br> </td> 
+      <td style="text-align: center;">N/A<br> </td> 
+      <td style="text-align: center;">N/A</td> 
+      <td style="text-align: center;">per GB retrieved<br> </td> 
+      <td style="text-align: center;">per GB retrieved</td> 
+      <td style="text-align: center;">per GB retrieved</td> 
+      <td style="text-align: center;">per GB retrieved</td> 
+      <td style="text-align: center;">per GB retrieved</td> 
+    </tr> 
+    <tr> 
+      <td>Lifecycle transitions</td> 
+      <td style="text-align: center;">Yes</td> 
+      <td style="text-align: center;">Yes</td> 
+      <td style="text-align: center;">No</td> 
+      <td style="text-align: center;">Yes</td> 
+      <td style="text-align: center;">Yes</td> 
+      <td style="text-align: center;">Yes</td> 
+      <td style="text-align: center;">Yes</td> 
+      <td style="text-align: center;">Yes</td> 
+    </tr> 
+  </tbody> 
+</table>
+
+
