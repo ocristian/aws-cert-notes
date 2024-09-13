@@ -13,6 +13,9 @@
 - [S3 - Storage Classes](#s3---storage-classes) 
 - [S3 - Durability and Availability](#s3---durability-and-availability) 
 - [S3 - Classes Comparison](#s3---classes-comparison) 
+- [S3 - Encryption](#s3-encryption)
+- [S3 - IAM Access Analyzer](#iam-access-analyzer-for-s3) 
+- [S3 - Shared Responsibility](#shared-responsibility-model-for-s3)
 <!-- /TOC -->
 
 #### Key Features:
@@ -317,3 +320,48 @@ Both `CRR` and `SRR` replicate new objects and metadata changes, ensuring data c
 </table>
 
 
+## S3 Encryption
+
+**Amazon S3** provides several encryption options to secure data at rest and in transit:
+
+- **Server-Side Encryption (SSE)**:
+  - **SSE-S3**: S3 manages encryption keys automatically.
+  - **SSE-KMS**: Uses AWS Key Management Service (KMS) for more control over encryption keys.
+  - **SSE-C**: Allows customers to manage their own encryption keys.
+
+- **Client-Side Encryption**: Data is encrypted by the client before uploading to S3, with the client managing encryption keys.
+
+Additionally, `S3` supports encryption in transit using **SSL/TLS** to protect data during transfer.
+
+
+## IAM Access Analyzer for S3
+
+**IAM Access Analyzer for S3** helps identify and review `S3 bucket` permissions to ensure your data is not unintentionally exposed. 
+
+### Key points:
+
+- **Analyzes S3 Buckets**: Scans bucket policies and access controls to detect public or cross-account access.
+- **Automated Findings**: Alerts you to any buckets that are accessible from outside your AWS account.
+- **Actionable Insights**: Provides recommendations on securing exposed resources.
+- **Compliance & Security**: Helps maintain security best practices and compliance with regulations by monitoring access continuously.
+
+It enables proactive management of bucket access to ensure data privacy and protection.
+
+
+## Shared Responsibility Model for S3
+
+In the **Shared Responsibility Model** for Amazon S3:
+
+- **AWS Responsibilities**:
+  - Manages the **infrastructure** (network, hardware, data centers).
+  - Ensures **availability**, **durability**, and **physical security** of `S3` services.
+  - Provides encryption tools and compliance with global standards.
+
+- **Your Responsibilities**:
+  - **Data protection** (encryption, access control, and managing permissions).
+  - Configuring **bucket policies**, **access control lists (ACLs)**, and **IAM roles**.
+  - Implementing **backup strategies** and compliance with internal or regulatory data handling requirements.
+  - Versioning, Logging and Monitoring
+  - S3 Storage Classes 
+
+AWS secures the infrastructure, while you secure the data and how it’s accessed.
