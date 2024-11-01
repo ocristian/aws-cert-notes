@@ -1,5 +1,6 @@
 # EC2 - Elastic Cloud Computing
 
+![AWS EC2 - Elastic Compute Cloud](/aws-cloud-practitioner/imgs/Res_Amazon-EC2_Instance_48.png)
 AWS `EC2` (`Amazon Elastic Compute Cloud`) is a web service that provides resizable compute capacity in the cloud.  
 It is designed to make web-scale cloud computing easier for developers and businesses.
 

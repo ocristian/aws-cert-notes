@@ -1,5 +1,6 @@
 # IAM - Identity and Access Management
 
+![AWS IAM - Identity and Access Management](/aws-cloud-practitioner/imgs/Res_AWS-Identity-Access-Management_Add-on_48.png)
 `IAM` is a `AWS Global Service` where users, groups, roles and policies are created.
 
 <!-- TOC depthFrom:2 -->

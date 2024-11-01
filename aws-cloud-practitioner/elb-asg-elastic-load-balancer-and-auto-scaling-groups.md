@@ -1,5 +1,7 @@
 # ELB & ASG - Elastic Load Balancing and Auto Scaling Groups 
 
+![AWS ELB & ASG - Elastic Load Balancing](/aws-cloud-practitioner/imgs/Res_Elastic-Load-Balancing_Application-Load-Balancer_48.png)
+
 <!-- TOC depthFrom:2 -->
 - [Summary](#summary)
 - [ELB - Elastic Load Balancing](#elb---elastic-load-balancing)

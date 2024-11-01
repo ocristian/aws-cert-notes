@@ -1,5 +1,6 @@
 # EC2 - Instance Storage
 
+![AWS EC2 Instance Storage](/aws-cloud-practitioner/imgs/Res_Amazon-EC2_DB-Instance_48.png)
 `EC2 Instance Storage` provides temporary, high-performance storage directly attached to an instance.  
 This storage is ideal for temporary data that changes frequently, such as buffers, caches, and scratch data. It is ephemeral, meaning the data is lost when the instance is stopped or terminated.  
 For persistent storage, use [Amazon EBS](#ebs-volume) or `Amazon S3`.

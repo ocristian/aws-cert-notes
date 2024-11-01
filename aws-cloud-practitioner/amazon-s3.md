@@ -1,5 +1,6 @@
 # Amazon S3
 
+![AWS Elastic Compute Cloud](/aws-cloud-practitioner/imgs/Res_Amazon-Simple-Storage-Service_Bucket-With-Objects_48.png)
 **Amazon Simple Storage Service (S3)** is a highly scalable, durable, and secure object storage service provided by AWS. It is designed to store and retrieve any amount of data from anywhere on the web.
 
 <!-- TOC depthFrom:2 -->
