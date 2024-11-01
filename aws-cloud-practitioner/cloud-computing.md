@@ -96,7 +96,7 @@ application.
 * Focus on the deployment and management of your application
 
 #### SaaS - Software as a Service
-* Completed product that is run and managed byt the service provider
+* Completed product that is run and managed by the service provider
 
 #### Management on each Cloud Type
 * Managed by you
