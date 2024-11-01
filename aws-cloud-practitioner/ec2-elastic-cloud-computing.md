@@ -1,19 +1,20 @@
 # EC2 - Elastic Cloud Computing
 
-`EC2` is a `AWS Global Service` where users, groups, roles and policies are created.
+AWS `EC2` (`Amazon Elastic Compute Cloud`) is a web service that provides resizable compute capacity in the cloud.  
+It is designed to make web-scale cloud computing easier for developers and businesses.
 
 <!-- TOC depthFrom:2 -->
 - [AWS Budget Setup](#aws-budget-setup)
-- [Amazon EC2](#ec2-elastic-compute-cloud)
-- [Sizing and Configuration Options](#ec2-sizing-and-configuration-options)
+- [Amazon EC2](#ec2---elastic-compute-cloud-infrastructure-as-a-service)
+- [Sizing and Configuration Options](#ec2---sizing-and-configuration-options)
 - [EC2 User Data](#ec2-user-data)
 - [Instance Types](#ec2-instance-types)
 - [Security Groups](#ec2-security-groups)
-- [SSH](#ssh)
+- [SSH](#ssh-summary)
 - [EC2 Instance Connect](#ec2-instance-connect)
 - [EC2 IAM Roles](#ec2-iam-roles)
-- [Instance Purchasing Options](#ec2-instance-purchasing-options)
-- [Shared Responsibility Model](#ec2-shared-responsibility-model)
+- [Instance Purchasing Options](#ec2---instance-purchasing-options)
+- [Shared Responsibility Model](#ec2---shared-responsibility-model)
 <!-- /TOC -->
 
 <a name="aws-budget-setup"></a>
